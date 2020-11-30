@@ -3,9 +3,9 @@ package Deque;
 import java.util.NoSuchElementException;
 
 public class Deque<Item> {
-    long size = 0; //размер дека
-    Node<Item> right = null;
-    Node<Item> left = null;
+    private int size = 0; //размер дека
+    private Node<Item> right = null;
+    private Node<Item> left = null;
 
     //добавление элемента в левый конец дека (в конец очереди)
     public void pushLeft(Item element) {
@@ -80,7 +80,7 @@ public class Deque<Item> {
     //просмотр крайнего справа элемента дека (из начала очереди)
     public Item peekRight() {
         if (size != 0) {
-            return  right.data;
+            return right.data;
         }
         throw new NoSuchElementException();
     }
@@ -92,7 +92,7 @@ public class Deque<Item> {
 
     //очистка дека от элеметов
     public void clear() {
-        for (Node<Item> node = left; node != null;){
+        for (Node<Item> node = left; node != null; ) {
             Node<Item> next = node.next;
             node.data = null;
             node.previous = null;
@@ -104,7 +104,15 @@ public class Deque<Item> {
         right = null;
     }
 
-    public long size() {
+    public Object[] toArray() {
+        Object[] array = new Object[size];
+        int i = 0;
+        for (Node<Item> node = left; node != null; node = node.next)
+            array[i++] = node.data;
+        return array;
+    }
+
+    public int size() {
         return size;
     }
 

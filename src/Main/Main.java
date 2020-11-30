@@ -4,18 +4,15 @@ import Deque.Deque;
 
 public class Main {
     public static void main(String[] args) {
-        Deque<String> deque = new Deque<String>();
+        Deque<Integer> deque = new Deque<Integer>();
         System.out.println(deque.size());
-        String test1 = "test1";
-        String test2 = "test2";
+        Integer test1 = 2;
+        Integer test2 = 1;
         deque.pushRight(test1);
         deque.pushRight(test2);
-        System.out.println(deque.size());
-        System.out.println(deque.isEmpty());
-        System.out.println(deque.peekLeft());
-        System.out.println(deque.peekRight());
-        deque.clear();
-        System.out.println(deque.size());
-        System.out.println(deque.isEmpty());
+        Object[] test = deque.toArray();
+        for (Object var: test) {
+            System.out.println(var);
+        }
     }
 }
