@@ -1,4 +1,4 @@
-package Deque;
+package deque;
 
 import java.util.NoSuchElementException;
 

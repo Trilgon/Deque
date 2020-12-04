@@ -1,8 +1,8 @@
-package Deque;
+package deque;
 
 public class Sorts {
     public static Deque<Integer> sortD(Deque<Integer> deque) {
-        if (!deque.isEmpty() || deque.size() != 1) {
+        if (!deque.isEmpty() && deque.size() != 1) {
             Deque<Object> packOne = new Deque<>();
             Deque<Object> packTwo = new Deque<>();
             Integer temp;
